@@ -2,7 +2,7 @@ package examples;
 
 import java.io.*;
 
-public class SignInGame {
+public class JoinGame {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
@@ -14,8 +14,8 @@ public class SignInGame {
 			while(i==1){
 				System.out.print("Enter your name to join the game: ");
 				String s=br.readLine();
-				JoinGame jg=new JoinGame(s);
-				jg.joinGame();
+				GamePlayer gp=new GamePlayer(s);
+				gp.joinGame();
 			}
 		}
 		catch(Exception e){
@@ -25,16 +25,16 @@ public class SignInGame {
 
 }
 
-class JoinGame{
+class GamePlayer{
 	String playerName;
 	static int currentPlayer=0;
 	
-	public JoinGame(String playerName){
+	public GamePlayer(String playerName){
 		this.playerName=playerName;
 	}
 	
 	public void joinGame(){
 		currentPlayer++;
-		System.out.println(this.playerName+" has been joined the game. "+" Current Player: "+currentPlayer);
+		System.out.println(this.playerName+" has been joined the game. "+" Current Player: "+currentPlayer+"\n");
 	}
 }
