@@ -1,26 +1,13 @@
 package examples;
 
-import java.io.*;
-
 public class JoinGame {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		try{
-			InputStreamReader isr=new InputStreamReader(System.in);
-			BufferedReader br=new BufferedReader(isr);
-			
-			int i=1;
-			while(i==1){
-				System.out.print("Enter your name to join the game: ");
-				String s=br.readLine();
-				GamePlayer gp=new GamePlayer(s);
-				gp.joinGame();
-			}
-		}
-		catch(Exception e){
-			e.printStackTrace();
-		}
+		GamePlayer gp1=new GamePlayer("P1");
+		gp1.joinGame();
+		GamePlayer gp2=new GamePlayer("P2");
+		gp2.joinGame();
 	}
 
 }
@@ -35,6 +22,6 @@ class GamePlayer{
 	
 	public void joinGame(){
 		currentPlayer++;
-		System.out.println(this.playerName+" has been joined the game. "+" Current Player: "+currentPlayer+"\n");
+		System.out.println(this.playerName+" has been joined the game. "+" Current Player: "+currentPlayer);
 	}
 }
